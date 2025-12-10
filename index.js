@@ -3,7 +3,7 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server, {
     cors: {
-        origin: "https://chat.rutvikdev.in",
+        origin: "http://13.49.69.114",
         methods: ["GET", "POST"]
     }
 });
