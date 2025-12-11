@@ -3,13 +3,16 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server, {
     cors: {
-        origin: "http://13.49.69.114",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
 
 const users = {};
-server.listen(3000);
+// server.listen(3000);
+server.listen(3000, '0.0.0.0', () => {
+    console.log("Server running on 3000");
+});
 var arry = []
 var join_user = []
 io.on('connection', async function (socket) {
